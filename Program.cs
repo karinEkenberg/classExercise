@@ -15,7 +15,39 @@ namespace classExercise
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            Inköpslista inköpslista = new Inköpslista();
+
+            inköpslista.Addproduct("Banan");
+            inköpslista.Addproduct("Mjölk");
+            inköpslista.Addproduct("Äpple");
+            inköpslista.Addproduct("Fil");
+            inköpslista.Addproduct("Kvarg");
+            inköpslista.Addproduct("Chips");
+
+            inköpslista.Showproducts();
+        }
+        class Inköpslista
+        {
+            List<string> productList = new List<string>();//the list
+
+            public void Addproduct(string productName)
+            {
+                productList.Add(productName);
+            }
+
+            public void Removeproduct(string productName)
+            {
+                productList.Remove(productName);
+            }
+
+            public void Showproducts()
+            {
+                Console.WriteLine("Inköpslista:");
+                foreach (string product in productList)
+                {
+                    Console.WriteLine(product);
+                }
+            }
         }
     }
 }
